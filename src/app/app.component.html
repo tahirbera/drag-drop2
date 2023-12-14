@@ -1,0 +1,101 @@
+
+
+<form #h1Form="ngForm" (ngSubmit)="getValues(h1Form.value)" class="formArea">
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-action">
+            <input type="text" ngModel name="newH1" placeholder="Enter new H1">
+            <span>Enter new h1 value</span>
+            <br>
+        </li>
+        <li class="list-group-item list-group-item-action">          
+    
+    <input type="text" ngModel name="newH2" placeholder="Enter new H2">
+    <span>Enter new h2 value</span>
+    <br>
+    
+        </li>
+        <li class="list-group-item list-group-item-action">
+            
+    <textarea name="newText" ngModel cols="20" rows="5"></textarea>
+    <span>Enter new text</span>
+    <br>
+        </li>
+        <li class="list-group-item list-group-item-action">
+            <input type="text" ngModel name="newIMG" placeholder="Enter IMG Url">
+            <span>Enter IMG url</span>
+            <br>   
+        </li>
+        <li class="list-group-item list-group-item-action" >
+            
+
+ 
+    <button class="btn btn-outline-success">Set New Values</button>
+        </li>
+    </ul>
+
+</form>
+<span style="margin-left: 12px; color: rgb(57, 82, 57);">please set value first</span>
+
+  
+<br>
+<br>
+<br>
+
+<div cdkDropListGroup class="container">
+    <div class="row">
+        <div class="col-10">
+            <div id="droparea">
+                <div cdkDropList [cdkDropListData]="todo" class="example-list" id="todo-list" (cdkDropListDropped)="drop($event)">
+                    @for (item of todo; track item) {
+                      <div class="example-container">
+                        <div class="example-box" id="{{item}}" cdkDrag (click)="onItemClick(item)" [innerHTML]="item"></div>
+                        <span class="delete-button" (click)="onDeleteClick(item)">X</span>
+                      </div>
+                      <br>
+                    }
+                  </div>                  
+
+        </div>
+        </div>
+        
+        <div class="col">
+            <h2>Item List</h2>
+            <span>Drag Left and Click On Them</span>
+            <br>
+            <br>            
+
+            <div
+                cdkDropList
+                id="done-list"
+                [cdkDropListData]="done"
+                class="example-list"
+                (cdkDropListDropped)="drop($event)">
+                @for (item of done; track item) {
+                <div class="example-box" cdkDrag>{{item}}</div>
+                }
+                
+            </div>
+                      
+            
+        </div>
+    </div>
+  </div>
+
+<!--    
+   <div cdkDropListGroup>
+    <div class="container" style="margin-left: 0px;">
+        <div class="row" >
+            <div class="col-10">
+                <div class="droparea"
+                cdkDropList
+                [cdkDropListData]="todo"
+                id="todo-list"
+                (cdkDropListDropped)="drop($event)"
+                >
+                </div>
+                
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+   </div> -->

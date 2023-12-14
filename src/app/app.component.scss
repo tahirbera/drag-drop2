@@ -1,0 +1,49 @@
+#droparea{
+  background-color: rgb(250, 218, 218);
+  width: auto;
+  height: 1000px;
+  text-align: center;
+  overflow: auto;
+  overflow-y: auto;
+  word-wrap: break-word;   
+}
+.content {
+  height: 500px; /* Set a fixed height or adjust as needed */
+}
+
+.textA{
+  width:300px; 
+  
+  border:1px solid #f00;
+  text-overflow:ellipsis;
+  white-space:nowrap; 
+}
+
+input{
+  margin-right: 5px;
+}
+textarea{
+  margin-right: 5px;
+}
+span{
+  color: red;
+
+}
+.example-container {
+  position: relative;
+  display: inline-block; /* This will make delete button appear next to the box */
+}
+
+.delete-button {
+  position: absolute;
+  top: 0;
+  right: -10px;
+  cursor: pointer;
+  display: none;
+  color: rgb(85, 0, 0);
+  
+}
+
+.example-container:hover .delete-button {
+  display: inline; /* or 'initial' depending on your specific styling needs */
+}
